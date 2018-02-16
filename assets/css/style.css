@@ -1,0 +1,13 @@
+html, body{
+    height:100%;
+}
+.jumbotron{
+    height:100% !important; 
+}
+
+.ans:hover {
+    border-color:black !important;
+    border-style:solid !important;
+    border-width:4px !important;
+    background-color:yellow !important;
+}
