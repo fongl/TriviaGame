@@ -17,6 +17,8 @@ $(document).ready(function() {
   //     showTrue();
   //   }
 
+  
+
   function nextQuestion() {
     if (questions.length != 0) {
       countdown();
@@ -24,21 +26,22 @@ $(document).ready(function() {
       var rand = Math.floor(Math.random() * questions.length);
       $("#question").text(questions[rand].question);
 
-      var rand1 = Math.floor(Math.random()*questions[rand].choices.length);
+      var rand1;
+      rando();   
       $("#answer1").text(questions[rand].choices[rand1]);
-      questions[rand].choices.splice(rand1,1);
+      splico();
 
-      var rand2 = Math.floor(Math.random()*questions[rand].choices.length);
-      $("#answer2").text(questions[rand].choices[rand2]);
-      questions[rand].choices.splice(rand2,1);
+      rando();
+      $("#answer2").text(questions[rand].choices[rand1]);
+      splico();
 
-      var rand3 = Math.floor(Math.random()*questions[rand].choices.length);
-      $("#answer3").text(questions[rand].choices[rand3]);
-      questions[rand].choices.splice(rand3,1);
+      rando();
+      $("#answer3").text(questions[rand].choices[rand1]);
+      splico();
       
-      var rand4 = Math.floor(Math.random()*questions[rand].choices.length);
-      $("#answer4").text(questions[rand].choices[rand4]);
-      questions[rand].choices.splice(rand4,1);
+      rando();
+      $("#answer4").text(questions[rand].choices[rand1]);
+      splico();
 
       currentAnswer = questions[rand].answer;
       questions.splice(rand, 1);
@@ -46,6 +49,15 @@ $(document).ready(function() {
       clearInterval(cd);
       results();
     }
+
+    function rando() {
+      rand1 = Math.floor(Math.random()*questions[rand].choices.length);
+    }
+    
+    function splico() {
+      questions[rand].choices.splice(rand1,1);
+    }
+
   }
 
   function showTrue() {
